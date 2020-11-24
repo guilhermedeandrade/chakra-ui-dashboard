@@ -1,4 +1,14 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const styles = {
+  global: {
+    body: {
+      backgroundColor: 'gray.100',
+    },
+  },
+}
+
+const theme = extendTheme({ styles })
 
 interface Props {
   Component: React.FC
@@ -7,7 +17,7 @@ interface Props {
 
 function MyApp({ Component, pageProps }: Props): React.ReactElement {
   return (
-    <ChakraProvider resetCSS>
+    <ChakraProvider theme={theme} resetCSS>
       <Component {...pageProps} />
     </ChakraProvider>
   )
