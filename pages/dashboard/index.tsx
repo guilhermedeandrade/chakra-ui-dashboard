@@ -1,11 +1,11 @@
 import {
   Heading,
-  VStack,
   HStack,
   Box,
   Text,
   Icon,
   Center,
+  SimpleGrid,
 } from '@chakra-ui/react'
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons'
 import {
@@ -17,22 +17,19 @@ import {
 
 function Dashboard(): React.ReactElement {
   return (
-    <Box mx={3}>
+    <Box mx={{ base: 3, sm: 6, md: 12, lg: 24, xl: 'auto' }} maxW="68rem">
       <Heading as="h1" mt={4} mb={6} color="gray.600">
         Dashboard
       </Heading>
 
-      <VStack
-        display={{ base: 'block', md: 'none' }}
-        spacing={6}
-        color="gray.400"
-      >
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} color="gray.400">
         <Box
           p={6}
           rounded="md"
           shadow="md"
-          w={{ base: 'full', sm: '75%' }}
-          maxW="30rem"
+          w={{ base: 'full', sm: '75%', md: 'full' }}
+          mx={{ sm: 'auto', md: 0 }}
+          maxW={{ base: '30rem', lg: '34rem' }}
           bg="white"
           pos="relative"
         >
@@ -70,8 +67,9 @@ function Dashboard(): React.ReactElement {
           p={6}
           rounded="md"
           shadow="md"
-          w={{ base: 'full', sm: '75%' }}
-          maxW="30rem"
+          w={{ base: 'full', sm: '75%', md: 'full' }}
+          mx={{ sm: 'auto', md: 0 }}
+          maxW={{ base: '30rem', lg: '34rem' }}
           bg="white"
           pos="relative"
         >
@@ -109,8 +107,9 @@ function Dashboard(): React.ReactElement {
           p={6}
           rounded="md"
           shadow="md"
-          w={{ base: 'full', sm: '75%' }}
-          maxW="30rem"
+          w={{ base: 'full', sm: '75%', md: 'full' }}
+          mx={{ sm: 'auto', md: 0 }}
+          maxW={{ base: '30rem', lg: '34rem' }}
           bg="white"
           pos="relative"
         >
@@ -148,8 +147,9 @@ function Dashboard(): React.ReactElement {
           p={6}
           rounded="md"
           shadow="md"
-          w={{ base: 'full', sm: '75%' }}
-          maxW="30rem"
+          w={{ base: 'full', sm: '75%', md: 'full' }}
+          mx={{ sm: 'auto', md: 0 }}
+          maxW={{ base: '30rem', lg: '34rem' }}
           bg="white"
           pos="relative"
         >
@@ -182,7 +182,7 @@ function Dashboard(): React.ReactElement {
             <Icon as={MdShowChart} color="purple.500" />
           </Center>
         </Box>
-      </VStack>
+      </SimpleGrid>
     </Box>
   )
 }
